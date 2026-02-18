@@ -1,0 +1,1256 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=5.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['Part-1'].PartitionFaceByShortestPath(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), point1=mdb.models['Model-1'].parts['Part-1'].InterestingPoint(
+    mdb.models['Model-1'].parts['Part-1'].edges[2], MIDDLE), point2=
+    mdb.models['Model-1'].parts['Part-1'].InterestingPoint(
+    mdb.models['Model-1'].parts['Part-1'].edges[0], MIDDLE))
+mdb.models['Model-1'].parts['Part-1'].PartitionFaceByShortestPath(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#3 ]', 
+    ), ), point1=mdb.models['Model-1'].parts['Part-1'].InterestingPoint(
+    mdb.models['Model-1'].parts['Part-1'].edges[5], MIDDLE), point2=
+    mdb.models['Model-1'].parts['Part-1'].InterestingPoint(
+    mdb.models['Model-1'].parts['Part-1'].edges[2], MIDDLE))
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82)
+mdb.models['Model-1'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.14, 0.56), 
+    point2=(0.213974475860596, 0.5))
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.213974475860596, 
+    0.5), point2=(-0.14, 0.42))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.14, 0.42), 
+    point2=(-0.14, 0.56))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[20])
+mdb.models['Model-1'].sketches['__profile__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[15], textPoint=(
+    0.0925236344337463, 0.333235293626785), value=0.25)
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[18], textPoint=(
+    0.0535413026809692, 0.512418627738953), value=1.0)
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[19], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], textPoint=(
+    0.0492141991853714, 0.477719515562057), value=1.0)
+mdb.models['Model-1'].sketches['__profile__'].FilletByRadius(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[19], curve2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[18], nearPoint1=(
+    0.198742374777794, 0.498307913541794), nearPoint2=(0.19840706884861, 
+    0.501501560211182), radius=0.001)
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].parts['Part-1'].Cut(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-1'].parts['Part-1'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Part-1'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.250364, 0.750543, 
+    0.0)))
+mdb.models['Model-1'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-1'].parts['Part-1'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Part-1'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.250364, 0.750543, 
+    0.0)))
+mdb.models['Model-1'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.1575, 0.42), 
+    point2=(0.3325, -0.8925))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.245468979679108, -1.04259103705215), value=0.2, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[12], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[13])
+mdb.models['Model-1'].sketches['__profile__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[22], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[12], textPoint=(
+    0.29400730689621, -1.16120881010818), value=0.1)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-0.42, -0.1575)
+    , point2=(1.0325, -0.385))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    1.25406629403687, -0.290417851703644), value=0.2, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[17], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[18])
+mdb.models['Model-1'].sketches['__profile__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[27], textPoint=(
+    0.901157921157837, -0.266671540039062), value=0.1)
+mdb.models['Model-1'].parts['Part-1'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#f ]', 
+    ), ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by a on 2024_08_21-22.18.24; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.18.26; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.18.27; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.18.27; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.05)
+mdb.models['Model-1'].parts['Part-1'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask((
+    '[#fffe7fff #27 ]', ), ), minSizeFactor=0.1, size=0.001)
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].deleteMesh()
+mdb.models['Model-1'].parts['Part-1'].setMeshControls(allowMapped=False, 
+    elemShape=QUAD, regions=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask((
+    '[#ffff ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD, secondOrderAccuracy=OFF, distortionControl=DEFAULT)), 
+    regions=(mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask((
+    '[#ffff ]', ), ), ))
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].deleteMesh()
+mdb.models['Model-1'].parts['Part-1'].deleteSeeds(regions=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask((
+    '[#ffffffff #3ff ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask((
+    '[#6141146 #1 ]', ), ), minSizeFactor=0.1, size=0.001)
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].deleteMesh()
+del mdb.models['Model-1'].parts['Part-1'].features['Partition face-3']
+mdb.models['Model-1'].parts['Part-1'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#927 ]', 
+    ), ), minSizeFactor=0.1, size=0.001)
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].deleteMesh()
+mdb.models['Model-1'].parts['Part-1'].setMeshControls(allowMapped=False, 
+    elemShape=QUAD, regions=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#f ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#f ]', 
+    ), ), name='Uel_Set-Plate')
+mdb.models['Model-1'].Material(name='Material-Plate')
+mdb.models['Model-1'].materials['Material-Plate'].Density(table=((1e-11, ), ))
+mdb.models['Model-1'].materials['Material-Plate'].Depvar(n=24)
+mdb.models['Model-1'].materials['Material-Plate'].UserMaterial(
+    mechanicalConstants=(1e-11, 0.3))
+mdb.models['Model-1'].HomogeneousSolidSection(material='Material-Plate', name=
+    'Uel_Section-Plate', thickness=None)
+mdb.models['Model-1'].Material(name='Material-Coh')
+mdb.models['Model-1'].materials['Material-Coh'].Elastic(table=((25000.0, 
+    25000.0, 25000.0), ), type=TRACTION)
+mdb.models['Model-1'].materials['Material-Coh'].MaxsDamageInitiation(table=((
+    5.0, 5.0, 5.0), ))
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.DamageEvolution(
+    mixedModeBehavior=BK, power=1.0, table=((0.05, 0.05, 0.05), ), type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.DamageStabilizationCohesive(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].CohesiveSection(material='Material-Coh', name=
+    'Coh_Section-Center', outOfPlaneThickness=None, response=
+    TRACTION_SEPARATION)
+# Save by a on 2024_08_21-22.27.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.27.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.27.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.27.04; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+mdb.models['Model-1'].parts['Part-1'].insertElements(edges=Region(
+    side1Edges=mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(
+    mask=('[#104 ]', ), )))
+mdb.models['Model-1'].parts['Part-1'].Set(elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), name=
+    'CohesiveSeam-1-Elements')
+mdb.models['Model-1'].parts['Part-1'].Surface(face3Elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), name=
+    'CohesiveSeam-1-TopSurf')
+mdb.models['Model-1'].parts['Part-1'].Surface(face1Elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), name=
+    'CohesiveSeam-1-BottomSurf')
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-TopNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#8c #0:14 #e0000000 #ffffffff:15 #ffff #0:16 #ff800000', 
+    ' #ffffffff:15 #3ff ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-BottomNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:2941 #ff000000 #ffffffff:31 #1 ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-MidNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:2973 #fffffffe #ffffffff:30 #3ff ]', ), ))
+# Save by a on 2024_08_21-22.27.22; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel_Set-Plate'], sectionName=
+    'Uel_Section-Plate', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['CohesiveSeam-1-Elements'], 
+    sectionName='Coh_Section-Center', thicknessAssignment=FROM_SECTION)
+# Save by a on 2024_08_21-22.27.43; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-1-1', 
+    part=mdb.models['Model-1'].parts['Part-1'])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=(0.5, -0.1, 0.0))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=(0.5, 1.1, 0.0))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#2200 ]', ), ), name='Set-BTM')
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#88 ]', ), ), name='Set-TOP')
+mdb.models['Model-1'].rootAssembly.Set(name='Set-RP1', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[4], ))
+mdb.models['Model-1'].rootAssembly.Set(name='Set-RP2', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[5], ))
+mdb.models['Model-1'].Equation(name='Constraint-1', terms=((1.0, 'Set-BTM', 2), 
+    (-1.0, 'Set-RP1', 2)))
+mdb.models['Model-1'].Equation(name='Constraint-2', terms=((1.0, 'Set-TOP', 2), 
+    (-1.0, 'Set-RP2', 2)))
+mdb.models['Model-1'].StaticStep(initialInc=0.001, maxInc=0.001, maxNumInc=
+    10000, minInc=1e-15, name='Step-1', nlgeom=ON, previous='Initial')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-BTM', region=mdb.models['Model-1'].rootAssembly.sets['Set-BTM'], u1=0.0
+    , u2=UNSET, ur3=0.0)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-TOP', region=mdb.models['Model-1'].rootAssembly.sets['Set-TOP'], u1=0.0
+    , u2=UNSET, ur3=0.0)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-RP1', region=mdb.models['Model-1'].rootAssembly.sets['Set-RP1'], u1=
+    UNSET, u2=-0.02, ur3=UNSET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-RP2', region=mdb.models['Model-1'].rootAssembly.sets['Set-RP2'], u1=
+    UNSET, u2=0.02, ur3=UNSET)
+# Save by a on 2024_08_21-22.33.07; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=
+    ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=0, 
+    waitMinutes=0)
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    type=ENERGY)
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_21-22.34.46; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.34.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.35.03; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.35.03; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.35.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.35.04; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].sets.changeKey(fromName='Uel_Set-Plate', 
+    toName='Uel_Set-Plate1')
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), name='Uel_Set-Plate1')
+mdb.models['Model-1'].parts['Part-1'].Set(name='Uel_Set-Plate2', objectToCopy=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel_Set-Plate1'])
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), name='Uel_Set-Plate2')
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[1]
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel_Set-Plate2'], sectionName=
+    'Uel_Section-Plate', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['CohesiveSeam-1-Elements'], 
+    sectionName='Coh_Section-Center', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].sectionAssignments[0].setValues(region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel_Set-Plate1'])
+# Save by a on 2024_08_21-22.37.28; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_21-22.37.34; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.37.35; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.37.35; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.37.35; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001, 
+    maxDegradation=0.99), ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), ))
+# Save by a on 2024_08_21-22.40.12; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.12; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.12; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.14; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.14; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.14; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.15; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_21-22.40.20; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.20; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.20; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.21; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.26; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.26; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.26; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.40.27; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(frequency=
+    10)
+# Save by a on 2024_08_21-22.45.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.49; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.45.49; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_21-22.53.24; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001), 
+    ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_22-10.38.30; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-10.38.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-10.38.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-10.38.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-10.39.01; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-10.39.02; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001), 
+    ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_22-16.09.26; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.09.27; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.28; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.28; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.28; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.28; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.28; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.41; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.47; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-16.10.54; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ContactProperty('IntProp-1')
+mdb.models['Model-1'].interactionProperties['IntProp-1'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, constraintEnforcementMethod=DEFAULT, 
+    pressureOverclosure=HARD)
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='IntProp-1', main=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].surfaces['CohesiveSeam-1-TopSurf']
+    , name='Int-1', secondary=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].surfaces['CohesiveSeam-1-BottomSurf']
+    , sliding=FINITE, thickness=ON)
+# Save by a on 2024_08_22-18.10.57; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.10.57; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.10.57; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.10.57; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.10.57; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.11.03; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.11.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.11.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.11.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.11.04; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.11.05; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.13.00; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.14.39; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.10; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.10; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.11; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.11; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.11; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.19; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.19; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.20; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.16.20; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Model-1'].interactionProperties['IntProp-1']
+del mdb.models['Model-1'].interactions['Int-1']
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001), 
+    ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), ))
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    power=2.5, softening=EXPONENTIAL, type=ENERGY)
+# Save by a on 2024_08_22-18.25.36; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.25.38; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.25.38; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_22-18.25.47; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.25.47; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.25.47; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.25.47; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.26.32; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.26.34; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.26.34; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.26.34; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.26.39; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_22-18.26.39; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].materials['Material-Coh'].elastic.setValues(table=((
+    2500.0, 2500.0, 2500.0), ))
+# Save by a on 2024_08_23-08.54.23; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.54.24; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#2200 ]', ), ), name='Set-BTM')
+mdb.models['Model-1'].rootAssembly.Set(name='Set-RP1', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[4], ))
+mdb.models['Model-1'].rootAssembly.Set(name='Set-RP2', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[5], ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#88 ]', ), ), name='Set-TOP')
+# Save by a on 2024_08_23-08.57.07; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.08; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.15; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.16; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.16; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.16; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.17; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.17; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.17; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.17; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.17; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.18; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.49; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.50; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.51; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.57.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.58.01; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.58.09; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.58.10; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-08.58.10; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-09.01.43; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-09.01.44; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-09.01.44; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_23-12.17.16; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001, 
+    maxDegradation=0.99), ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:2932 #ffffffe0 #ffffffff:30 #1fff ]', ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), ))
+# Save by a on 2024_08_25-10.09.42; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].deleteSets(setNames=(
+    'CohesiveSeam-1-TopNodes', 'CohesiveSeam-1-BottomNodes', 
+    'CohesiveSeam-1-Elements', 'CohesiveSeam-1-MidNodes'))
+mdb.models['Model-1'].parts['Part-1'].deleteMesh()
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+mdb.models['Model-1'].parts['Part-1'].deleteElement(elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#ffffffff:31 #ff ]', ), ))
+# Save by a on 2024_08_25-10.21.02; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].deleteSurfaces(surfaceNames=(
+    'CohesiveSeam-1-BottomSurf', 'CohesiveSeam-1-TopSurf'))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Part-1'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#927 ]', 
+    ), ), minSizeFactor=0.1, size=0.005)
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+# Save by a on 2024_08_25-10.23.41; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+mdb.models['Model-1'].parts['Part-1'].insertElements(edges=Region(
+    side1Edges=mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(
+    mask=('[#927 ]', ), )))
+mdb.models['Model-1'].parts['Part-1'].Set(elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:13 #1fff ]', ), ), name=
+    'CohesiveSeam-1-Elements')
+mdb.models['Model-1'].parts['Part-1'].Surface(face3Elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:13 #1fff ]', ), ), name=
+    'CohesiveSeam-1-TopSurf')
+mdb.models['Model-1'].parts['Part-1'].Surface(face1Elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:13 #1fff ]', ), ), name=
+    'CohesiveSeam-1-BottomSurf')
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-TopNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:46 #10000000 #0:15 #20000 #0:371 #f4300000 #ffffffff:6', 
+    ' #1 #0:7 #fffffe00 #3ffffff #0:50 #fff80000 #ffffffff:5', 
+    ' #3fffffff #0 #10000 ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-BottomNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:46 #10000000 #0:15 #10000 #0:371 #800000 #0:6', 
+    ' #ff800000 #ffffffff:2 #3ffffff #ffff0000 #ffffffff:2 #7ffff #0:47', 
+    ' #e0000000 #ffffffff:4 #7ffff #0:2 #800000 #0:2 #c0000000', 
+    ' #ffffffff:3 #f ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-MidNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:511 #fffffff0 #ffffffff:13 #fff ]', ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_25-10.25.12; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.19; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.19; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.24; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.30; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.31; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.31; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.25.31; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001, 
+    maxDegradation=0.99), ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:13 #1fff ]', ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4, elemLibrary=STANDARD), ElemType(elemCode=CPE3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#6 ]', 
+    ), ), ))
+# Save by a on 2024_08_25-10.27.06; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.27.07; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.27.07; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.27.07; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.27.07; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.27.08; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_25-10.27.15; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.27.15; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].deleteSets(setNames=(
+    'CohesiveSeam-1-BottomNodes', 'CohesiveSeam-1-Elements', 
+    'CohesiveSeam-1-MidNodes', 'CohesiveSeam-1-TopNodes'))
+mdb.models['Model-1'].parts['Part-1'].deleteSurfaces(surfaceNames=(
+    'CohesiveSeam-1-BottomSurf', 'CohesiveSeam-1-TopSurf'))
+mdb.models['Model-1'].parts['Part-1'].deleteMesh()
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+mdb.models['Model-1'].parts['Part-1'].deleteElement(elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#ffffffff:14 #3 ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].insertElements(edges=Region(
+    side1Edges=mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(
+    mask=('[#104 ]', ), )))
+mdb.models['Model-1'].parts['Part-1'].Set(elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:5 #7ffff ]', ), ), name=
+    'CohesiveSeam-1-Elements')
+mdb.models['Model-1'].parts['Part-1'].Surface(face3Elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:5 #7ffff ]', ), ), name=
+    'CohesiveSeam-1-TopSurf')
+mdb.models['Model-1'].parts['Part-1'].Surface(face1Elements=
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:5 #7ffff ]', ), ), name=
+    'CohesiveSeam-1-BottomSurf')
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-TopNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#7 #0:437 #fffffff0 #ffffffff:2 #7f #0:3 #ffc00000', 
+    ' #ffffffff:2 #1ffffff ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-BottomNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:525 #ffffffff:6 #1ff ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].Set(name='CohesiveSeam-1-MidNodes', 
+    nodes=mdb.models['Model-1'].parts['Part-1'].nodes.getSequenceFromMask(
+    mask=('[#0:531 #fffffe00 #ffffffff:5 #3ffff ]', ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, viscosity=0.0001, 
+    maxDegradation=0.99), ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].elements.getSequenceFromMask(mask=(
+    '[#0:431 #fffff800 #ffffffff:5 #7ffff ]', ), ), ))
+# Save by a on 2024_08_25-10.34.12; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2024_08_25-10.34.36; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.34.43; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.34.43; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.34.44; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-10.34.44; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.55; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.55; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.10.55; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.setValues(
+    table=((50.0, 50.0, 50.0), ))
+mdb.models['Model-1'].materials['Material-Coh'].elastic.setValues(table=((
+    250000.0, 250000.0, 250000.0), ))
+# Save by a on 2024_08_25-11.11.19; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.19; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.20; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.27; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.27; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.27; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.27; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.28; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-11.11.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_25-15.01.52; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    table=((0.5, 0.5, 0.5), ), type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#2200 ]', ), ), name='Set-BTM')
+# Save by a on 2024_08_28-15.54.45; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-15.54.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-15.54.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-15.54.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-15.54.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-15.54.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-15.54.54; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-16.13.37; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-Coh'].elastic.setValues(table=((
+    2500000.0, 2500000.0, 2500000.0), ))
+# Save by a on 2024_08_28-19.46.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.42; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.43; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.46.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.47.23; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.47.23; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.47.24; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.54.45; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-19.55.02; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.setValues(
+    table=((100.0, 100.0, 100.0), ))
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    table=((1.0, 1.0, 1.0), ), type=ENERGY)
+# Save by a on 2024_08_28-20.37.44; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-20.37.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-20.37.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-20.37.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-20.37.53; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2024_08_28-20.37.53; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].parts['Part-1'].sets.changeKey(fromName='Uel_Set-Plate1', 
+    toName='Uel-Set-Plate1')
+mdb.models['Model-1'].parts['Part-1'].sets.changeKey(fromName='Uel_Set-Plate2', 
+    toName='Uel-Set-Plate2')
+mdb.models['Model-1'].parts['Part-1'].sectionAssignments[0].setValues(region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel-Set-Plate1'])
+mdb.models['Model-1'].parts['Part-1'].sectionAssignments[1].setValues(region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel-Set-Plate2'])
+mdb.models['Model-1'].sections.changeKey(fromName='Coh_Section-Center', toName=
+    'Coh-Section-Center')
+mdb.models['Model-1'].sections.changeKey(fromName='Uel_Section-Plate', toName=
+    'Uel-Section-Plate')
+mdb.models['Model-1'].parts['Part-1'].sectionAssignments[0].setValues(region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel-Set-Plate1'], sectionName=
+    'Uel-Section-Plate')
+mdb.models['Model-1'].parts['Part-1'].sectionAssignments[1].setValues(region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Uel-Set-Plate2'], sectionName=
+    'Uel-Section-Plate')
+# Save by a on 2025_01_06-20.57.46; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by a on 2025_01_06-20.58.52; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2025_01_06-20.58.59; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageEvolution.setValues(
+    type=ENERGY)
+mdb.models['Model-1'].materials['Material-Coh'].maxsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+# Save by a on 2025_01_06-21.01.00; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2025_01_06-21.01.00; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2025_01_06-21.01.00; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].regenerate()
+# Save by a on 2025_01_06-21.03.08; build 2022 2021_09_15-13.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Part-1'].sectionAssignments[2].setValues(region=
+    mdb.models['Model-1'].parts['Part-1'].sets['CohesiveSeam-1-Elements'], 
+    sectionName='Coh-Section-Center')
+# Save by a on 2025_01_06-21.03.59; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2025_01_06-21.04.05; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2025_01_06-21.04.06; build 2022 2021_09_15-13.57.30 176069
+# Save by a on 2025_01_06-21.04.06; build 2022 2021_09_15-13.57.30 176069
