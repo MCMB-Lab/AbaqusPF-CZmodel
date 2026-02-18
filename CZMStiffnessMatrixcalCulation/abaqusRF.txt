@@ -1,0 +1,68 @@
+Source 1
+---------
+
+   ODB: /home2/DREXEL/lm3593/Desktop/LiMeng/09PFMCZM/PFCZ1ThreeElementTensileTest2DWeakInterface/Job-1_UEL.odb
+   Step: Step-1
+   Frame: Increment    300: Step Time =   0.3000
+
+Loc 1 : Nodal values from source 1
+
+Output sorted by column "Node Label".
+
+Field Output reported at nodes for part: PLATE-1
+
+      Node Label    RF.Magnitude          RF.RF1          RF.RF2
+                          @Loc 1          @Loc 1          @Loc 1
+-----------------------------------------------------------------
+               1     595.063E-03              0.     595.063E-03
+               2     595.063E-03              0.    -595.063E-03
+               3         2.45351         2.38025    -595.063E-03
+               4         2.45351         2.38025     595.063E-03
+               5         2.45351        -2.38025     595.063E-03
+               6         2.45351        -2.38025    -595.063E-03
+               7     595.063E-03              0.    -595.063E-03
+               8     595.063E-03              0.     595.063E-03
+
+
+  Minimum            595.063E-03        -2.38025    -595.063E-03
+         At Node               8               6               7
+
+  Maximum                2.45351         2.38025     595.063E-03
+         At Node               6               4               8
+
+           Total         12.1943              0.              0.
+
+
+Source 1
+---------
+
+   ODB: /home2/DREXEL/lm3593/Desktop/LiMeng/09PFMCZM/PFCZ1ThreeElementTensileTest2DWeakInterface/Job-1_UEL.odb
+   Step: Step-1
+   Frame: Increment    301: Step Time =   0.3010
+
+Loc 1 : Nodal values from source 1
+
+Output sorted by column "Node Label".
+
+Field Output reported at nodes for part: PLATE-1
+
+      Node Label    RF.Magnitude          RF.RF1          RF.RF2
+                          @Loc 1          @Loc 1          @Loc 1
+-----------------------------------------------------------------
+               1     594.901E-03              0.     594.901E-03
+               2     594.901E-03              0.    -594.901E-03
+               3         2.45284         2.37961    -594.901E-03
+               4         2.45284         2.37961     594.901E-03
+               5         2.45284        -2.37961     594.901E-03
+               6         2.45284        -2.37961    -594.901E-03
+               7     594.901E-03              0.    -594.901E-03
+               8     594.901E-03              0.     594.901E-03
+
+
+  Minimum            594.901E-03        -2.37961    -594.901E-03
+         At Node               8               6               7
+
+  Maximum                2.45284         2.37961     594.901E-03
+         At Node               6               4               8
+
+           Total         12.1910              0.              0.
